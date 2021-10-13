@@ -32,3 +32,10 @@ services:
     App\Service\GeocoderDecorator:
         arguments:
             $geocoders: ['@App\Service\GoogleGeocoder', '@App\Service\HereGeocoder']
+
+    App\Service\GeocoderService:
+        arguments:
+            $client: '@guzzle'
+
+    guzzle:
+        class: \GuzzleHttp\Client
